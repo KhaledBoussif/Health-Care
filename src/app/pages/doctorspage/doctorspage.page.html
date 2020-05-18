@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="colrose" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="colrose">Doctors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchpay" autocomplete="off"></ion-searchbar>
+  </ion-toolbar>
+  <ion-list >
+    <ion-item *ngFor="let pay of Listpays | filter:searchpay" >
+      <ion-label>
+        {{ pay  }}
+        <button ion-button float-right class="colrose closeB" (click)=presentModal(pay) >
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+   
+</ion-content>

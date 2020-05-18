@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons class="colgris" slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="colrose">
+        <ion-text >
+          <ion-text  class="fw700">HEALTH CARE</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons class="colgris" slot="end">
+      <ion-button size="small" shape="round"  (click)="notifications()">
+        <ion-icon name="notifications" ></ion-icon>
+        <ion-badge class="backgris" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="backrose" >
+    <ion-searchbar class="sechhan"  [(ngModel)]="searchKey"></ion-searchbar>
+    
+    
+      <ion-list lines="none" class="listchan"  slot="end">
+          <ion-item style="border-color: transparent;" >
+            <ion-icon class="iconeglob" name="globe"></ion-icon>
+            <ion-select  [(ngModel)]="lang" (ionChange)="switchLanguage()" >
+                <ion-select-option value="en">English</ion-select-option>
+                <ion-select-option value="ta">Tamizh (தமிழ்)</ion-select-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+      
+      
+  
+<!--
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    <ion-item lines="none" color="medium">
+      <ion-label>
+        <h2 no-margin class="fw500 no-margin">
+          <ion-text class="colrose">{{ 'Home' | translate }}</ion-text>
+        </h2>
+        <!--
+        <p class="text-11x no-margin">
+          <ion-text  color="primary">{{yourLocation}}</ion-text>
+        </p>-->
+      </ion-label>
+       
+      
+      <!--
+      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
+        Location
+        <ion-icon name="locate"></ion-icon>
+      </ion-button>
+      -->
+    </ion-item>
+
+    
+  </ion-card>
+<!--
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
+      Modal 1: Modal Image
+    </ion-button>
+  </ion-card>
+
+  <ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
+    Modal 2: Search Filter
+  </ion-button>
+  <ion-button margin shape="round" expand="full" color="secondary" (click)="Location()">
+    show location
+  </ion-button>
+  -->
+ 
+<!--
+<ion-list>
+    <ion-item>
+        <h2>{{ 'APPLE' | translate }}</h2>
+    </ion-item>
+    <ion-item>
+        <h2>{{ 'BALL' | translate }}</h2>
+    </ion-item>
+    <ion-item>
+        <h2>{{ 'CAT' | translate }}</h2>
+    </ion-item>
+</ion-list>
+-->
+<ion-slides   [options]="slideOpt"  #slides>
+
+    <ion-slide>
+      
+        <img class="imagestyl"  src="assets/img/image1.png">
+      
+    </ion-slide>
+
+    <ion-slide>
+      
+        <img class="imagestyl"  src="assets/img/image2.png">
+      
+    </ion-slide>
+
+    <ion-slide>
+      
+        <img class="imagestyl"  src="assets/img/image3.png">
+      
+    </ion-slide>
+    
+    <ion-slide>
+      
+        <img class="imagestyl"  src="assets/img/image4.png">
+    
+    </ion-slide>
+
+    <ion-slide>
+      
+        <img class="imagestyl"  src="assets/img/image5.png">
+      
+    </ion-slide>
+
+    <ion-slide>
+     
+        <img class="imagestyl"  src="assets/img/image6.png">
+      
+    </ion-slide>
+    
+    <ion-slide>
+     
+        <img class="imagestyl"  src="assets/img/image7.png">
+      
+    </ion-slide>
+
+</ion-slides>
+
+  <popmenu></popmenu>
+</ion-content>
+  
