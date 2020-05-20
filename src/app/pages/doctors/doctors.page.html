@@ -11,13 +11,13 @@
   <ion-card class="backgro" *ngFor="let doc of Listdoc" >
     <ion-card-header>
       <ion-card-subtitle>Generalist</ion-card-subtitle>
-      <ion-card-title>{{ doc.Nom }} {{ doc.Prenom }}</ion-card-title>
+      <ion-card-title> <ion-icon name="person"></ion-icon> {{ doc.Nom }} {{ doc.Prenom }}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-     <b>Adresse:</b> {{ doc.Adresse }} <br>
-     <b>Horaires:</b> {{ doc.Horaires }} <br>
-     <b>Num:</b> {{ doc.numtel }}
+      <ion-icon name="pin"></ion-icon> <b>Address:</b> <br> {{ doc.Adresse }} <br>
+      <ion-icon name="stopwatch"></ion-icon> <b>Hours:</b><br> {{ doc.Horaires }} <br>
+      <ion-icon name="call"></ion-icon> <b>Phone:</b> <br>{{ doc.numtel }}
     </ion-card-content>
     
   </ion-card>

@@ -93,7 +93,9 @@ export class AppComponent {
     this.navCtrl.navigateForward('edit-profile');
   }
 
+  
   logout() {
+    firebase.auth().signOut();
     this.navCtrl.navigateRoot('/');
   }
 }

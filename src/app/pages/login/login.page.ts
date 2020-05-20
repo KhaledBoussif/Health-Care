@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public alertController: AlertController
   ) { }
 
   ionViewWillEnter() {
@@ -86,7 +88,39 @@ export class LoginPage implements OnInit {
   }
 
   goToHome() {
-    this.navCtrl.navigateRoot('/home-results');
+    const email = this.onLoginForm.get('email').value;
+    const password = this.onLoginForm.get('password').value;
+    this.signInUser(email,password);
+    
+  }
+
+  
+  signInUser(email: string, password: string) {
+    return new Promise(
+      (resolve, reject) => {+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(
+          () => {
+            resolve();
+            console.log('valid');
+            this.navCtrl.navigateRoot('/home-results');
+          },
+          (error) => {
+            this.showerror(error)
+            reject(error);
+            console.log(error);
+            
+          }
+        );
+      }
+    );
+  }
+  async showerror(error:any) {
+    const alert = await this.alertController.create({
+      header: 'Attention',
+      message: error,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 
 }

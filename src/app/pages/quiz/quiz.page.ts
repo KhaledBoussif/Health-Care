@@ -15,7 +15,7 @@ import { HomeResultsPage } from '../home-results/home-results.page';
 
 export class QuizPage implements OnInit {
   
-  public Quiz: Array<{Qest:String,Ask:String,max:number,min:number}>;
+  public Quiz: Array<{Qest:String,Ask:String,max:number,min:number,rep:string}>;
    message:boolean;
     bien:number = 0;
   @ViewChild('slides') slides: any;
@@ -37,42 +37,48 @@ export class QuizPage implements OnInit {
         Qest:"What has been your highest temperature in the past 48 hours?",
         Ask:"Degrees:",
         max:42,
-        min:37
+        min:37,
+        rep:"Fever."
       },
       {
         
         Qest:"In the past few days, have you had a cough or an increase in your usual cough?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Increase in usual cough in recent days."
       },
       {
         
         Qest:"In recent days, have you noticed a marked decrease or loss in your taste or odor?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Strong decrease or loss of taste or smell in recent days."
       },
       { 
         Qest:"In the past few days, have you had a sore throat and / or muscle pain and / or unusual body aches?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Unusual fatigue in recent days."
       },
 
       {
         
-        Qest:"In the past 24 hours, have you had diarrhea?",
+        Qest:"In the past 24 hours, have you had diarrhea? With at least 3 loose stools.",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Not able to eat for more than 24 hours."
       },
       {
         
-        Qest:"With at least 3 loose stools.",
+        Qest:"",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:""
       },
 
 
@@ -81,7 +87,8 @@ export class QuizPage implements OnInit {
         Qest:"In recent days, have you been unusually tired?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Unusual shortness of breath in the past 24 hours."
       },
 
 
@@ -90,21 +97,27 @@ export class QuizPage implements OnInit {
         Qest:"OUI:Does this fatigue force you to rest for more than half the day?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Diarrhea in the past 24 hours."
+        
       },
       {
         
         Qest:"NON:For 24 hours or more, have you been unable to eat or drink?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Sore throat and / or muscle pain and / or unusual body aches in recent days."
+        
       },
       {
         
         Qest:"In the past 24 hours, have you noticed any unusual shortness of breath when speaking or making a small effort?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Unbalanced arterial hypertension or cardiac or vascular disease or taking a cardiological treatment."
+        
       },
 
       {
@@ -113,7 +126,8 @@ export class QuizPage implements OnInit {
         +" This is to calculate a specific risk factor.",
         Ask:"Age:",
         max:100,
-        min:15
+        min:15,
+        rep:null
         
         
       },
@@ -123,7 +137,8 @@ export class QuizPage implements OnInit {
         Qest:"What is your size ?, In order to calculate the body mass index which is a factor influencing the risk of complications of the infection. ",
         Ask:"Size:",
         max:250,
-        min:80
+        min:80,
+        rep:null
       },
 
       {
@@ -131,14 +146,17 @@ export class QuizPage implements OnInit {
         Qest:"What is your weight ? In order to calculate the body mass index which is a factor influencing the risk of complications of the infection.",
         Ask:"Weight:",
         max:250,
-        min:20
+        min:20,
+        rep:null
       },
       {
         
         Qest:"Do you have unbalanced high blood pressure? Or do you have heart or vascular disease? Or are you taking cardiological treatment?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Diabetic."
+        
       },
 
 
@@ -147,7 +165,9 @@ export class QuizPage implements OnInit {
         Qest:"Êtes-vous diabétique ?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Cancer or had cancer in the past three years."
+        
       },
 
       {
@@ -155,7 +175,9 @@ export class QuizPage implements OnInit {
         Qest:"Have you had or have you had cancer in the past three years?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Respiratory illness or followed by a pulmonologist."
+        
       },
 
       {
@@ -163,7 +185,9 @@ export class QuizPage implements OnInit {
         Qest:"Do you have respiratory disease? Or are you followed by a pulmonologist?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Chronic kidney failure on dialysis."
+        
       },
 
 
@@ -172,7 +196,9 @@ export class QuizPage implements OnInit {
         Qest:"Do you have chronic liver disease?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Chronic liver disease."
+        
       },
 
       {
@@ -180,7 +206,9 @@ export class QuizPage implements OnInit {
         Qest:"Do you have a disease known to lower your immune system?",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Disease known to decrease the immune system."
+       
       },
 
       {
@@ -188,12 +216,9 @@ export class QuizPage implements OnInit {
         Qest:"Are you taking immunosuppressive therapy? It is a treatment that lowers your defenses against infection. Here are some examples: corticosteroids, methotrexate, ciclosporin, tacrolimus, azathioprine, cyclophosphamide (non-exhaustive list).",
         Ask:"",
         max:null,
-        min:null
+        min:null,
+        rep:"Taking immunosuppressive therapy."
       },
-
-
-
-
 
     ]
    }
