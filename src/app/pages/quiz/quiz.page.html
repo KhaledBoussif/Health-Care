@@ -10,7 +10,7 @@
 <ion-content>
   
   <ion-slides   #slides>
-    
+    <!--
     <ion-slide  *ngFor="let Q of Quiz ; let i = index"  >
       <ion-label class="Quest" floating style="text-align: center;" >
         <h1><b>Question {{i+1}}</b></h1><br>
@@ -28,7 +28,7 @@
             <ion-input *ngIf="Q.Ask == 'Size:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Size" ></ion-input>
             <ion-input *ngIf="Q.Ask == 'Weight:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Weight" ></ion-input>
         </ion-item>
-        <ion-button  class="but" item-end  (click)="nextSlide(i+1)"  [disabled]="!validinput"><ion-icon    ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></ion-button>
+        <ion-button  class="but" item-end  (click)="nextSlide(i+1,null,Q.rep)"  [disabled]="!validinput"><ion-icon    ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></ion-button>
         
         
       </ion-item>
@@ -42,14 +42,15 @@
       <ion-list *ngIf="Q.Ask == '' " class="radiob"  radio-group>
         <ion-item>
           <ion-label>YES</ion-label>
-          <ion-radio (click)="nextSlide(i+1,'yes')"></ion-radio>
+          <ion-radio (click)="nextSlide(i+1,'yes',Q.rep)"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>NO</ion-label>
-          <ion-radio (click)="nextSlide(i+1,'no')"></ion-radio>
+          <ion-radio (click)="nextSlide(i+1,'no',null)"></ion-radio>
         </ion-item>
       </ion-list>
     </ion-slide>
+  -->
 
     <ion-slide *ngIf="message" >
       <ion-label  class="Quest" floating style="text-align: center;" >
@@ -57,7 +58,7 @@
       </ion-label>
 
       <ion-button class="bshowgood" (click)="showb1()"><ion-label>What to do with my self-assessment?</ion-label></ion-button>
-      <ion-button class="bshowgood" >Details of my self-assessment</ion-button>
+      <ion-button class="bshowgood" (click)="showd1()" >Details of my self-assessment</ion-button>
       <ion-button class="bshowgood" (click)="presentModal()" >Food during COVID-19</ion-button>
 
       <ion-label class="imageshtext"  floating style="text-align: center;" >
@@ -111,7 +112,7 @@
         You may have COVID 19. Your symptoms indicate that medical advice is needed.  
       </ion-label>
       <ion-button class="bshowgood" (click)="showM1()"><ion-label>What to do with my self-assessment?</ion-label></ion-button>
-      <ion-button class="bshowgood" >Details of my self-assessment</ion-button>
+      <ion-button class="bshowgood" (click)="showd1()" >Details of my self-assessment</ion-button>
       <ion-button class="bshowgood" (click)="presentModal()">Food during COVID-19</ion-button>
    
 

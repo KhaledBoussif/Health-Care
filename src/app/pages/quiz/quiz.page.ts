@@ -5,7 +5,8 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { ModalePageFoodPage } from '../modale-page-food/modale-page-food.page';
 import { TranslateService } from '@ngx-translate/core';
 import { HomeResultsPage } from '../home-results/home-results.page';
-
+import * as firebase from 'firebase';
+import * as jsPDF from 'jspdf'
 
 @Component({
   selector: 'app-quiz',
@@ -18,6 +19,7 @@ export class QuizPage implements OnInit {
   public Quiz: Array<{Qest:String,Ask:String,max:number,min:number,rep:string}>;
    message:boolean;
     bien:number = 0;
+    detaill:Array<string>;
   @ViewChild('slides') slides: any;
   slideOptions: any;
   public inputrep: FormGroup;
@@ -72,14 +74,7 @@ export class QuizPage implements OnInit {
         min:null,
         rep:"Not able to eat for more than 24 hours."
       },
-      {
-        
-        Qest:"",
-        Ask:"",
-        max:null,
-        min:null,
-        rep:""
-      },
+      
 
 
       {
@@ -273,6 +268,53 @@ export class QuizPage implements OnInit {
     });
     await alert.present();
   }
+
+  async showd1() {
+    var d="";
+    var dp="";
+    this.detaill=[];
+    
+    firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).child('Detail').once('value', async (snapshot) => {
+      snapshot.forEach((chillldddd) => {
+        
+          this.detaill.push(
+            chillldddd.val()
+          )
+        
+        
+      })
+      for(var i=0;i<=this.detaill.length;i++){
+        console.log(this.detaill[i])
+        if(this.detaill[i] != undefined)
+        {
+          d=d+"- "+this.detaill[i] +"<br>";
+          dp=dp+"- "+this.detaill[i] +"\r";
+        }
+      }
+      console.log(d)
+      const alert = await this.alertController.create({
+        header: 'Detail ',
+        message: d,
+        buttons: ['OK',
+          {
+            text: 'Enregistrer',
+            handler: () => {
+              var doc = new jsPDF()
+
+              doc.text(dp, 10, 10)
+              doc.save('Personal_detail.pdf')
+            }
+          }
+        ]
+      });
+      await alert.present();
+    });
+    
+    
+    
+    
+   
+  }
   
   async presentModal() {
     const modal = await this.modalController.create({
@@ -280,9 +322,9 @@ export class QuizPage implements OnInit {
     });
     return await modal.present();
   }
-nextSlide(i:number,YO:String){
+nextSlide(i:number,YO:String,sendrep:string){
     this.validinput=false;
-  
+    
   
     var rep=+(<HTMLInputElement>document.getElementById("Degree")).value;
    //console.log(rep)
@@ -290,13 +332,21 @@ nextSlide(i:number,YO:String){
     if(i <= 9 && (YO == "no" || (rep < 38 && rep >= 37)) ){
       this.bien=this.bien+1;
       console.log("no "+this.bien);
+    }else{
+
     }
    
     (<HTMLInputElement>document.getElementById("Degree")).value = "";
     (<HTMLInputElement>document.getElementById("Age")).value = "";
     (<HTMLInputElement>document.getElementById("Size")).value = "";
     (<HTMLInputElement>document.getElementById("Weight")).value = "";
-  
+    //console.log(sendrep)
+    //console.log(i)
+    if((rep > 37 || YO == "yes") && sendrep != null)
+    {
+        firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).child('Detail').child(i.toString()).set(sendrep);
+    }
+
   if(i == 7 && YO == "yes" && i > -1){
     console.log(i+1);
      this.Quiz.splice(i+1, 1);
@@ -308,10 +358,17 @@ nextSlide(i:number,YO:String){
   }else 
   if(i == this.Quiz.length && this.bien == 9){
     this.message=true;
+    firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
+      infected:false
+    })
     console.log("BIEN")
 
   }else
+  if(i == this.Quiz.length && this.bien < 9)
   {
+    firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
+      infected:true
+    })
     this.message=false;
   }
   
