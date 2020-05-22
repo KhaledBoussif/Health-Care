@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -6,16 +6,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { Pages } from './interfaces/pages';
 import * as firebase from 'firebase';
+import { HomeResultsPage } from './pages/home-results/home-results.page';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit  {
+  
   public appPages: Array<Pages>;
-
+  name:string
+  subscription: Subscription;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -78,21 +81,46 @@ export class AppComponent {
         icon: 'information-circle-outline'
       },
     ];
-
+   
+     
+    
     this.initializeApp();
+    
+      
+     
   }
-
+  ngOnInit() {
+    const source = interval(1000);
+   
+    this.subscription = source.subscribe(val => {
+      if(HomeResultsPage._name != null)
+        {
+          this.name=HomeResultsPage._name
+        } 
+    });
+    
+  }
+    
+  ionViewDidLoad() { 
+    
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     }).catch(() => {});
-  }
+   
+    
 
+  }
+  
+/** 
   goToEditProgile() {
     this.navCtrl.navigateForward('edit-profile');
+    
   }
-
+*/
   
   logout() {
     firebase.auth().signOut();

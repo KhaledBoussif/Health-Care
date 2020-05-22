@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   NavController,
   AlertController,
@@ -16,16 +16,20 @@ import { NotificationsComponent } from './../../components/notifications/notific
 import { from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { QuizPage } from '../quiz/quiz.page';
+import * as firebase from 'firebase';
 @Component({
   selector: 'app-home-results',
   templateUrl: './home-results.page.html',
   styleUrls: ['./home-results.page.scss']
 })
-export class HomeResultsPage {
+export class HomeResultsPage  {
   searchKey = '';
   yourLocation = '123 Test Street';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
+  
   public lang:any;
+  public static _name: string;
+  
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
@@ -39,8 +43,14 @@ export class HomeResultsPage {
     this.lang = 'en';
     this.translate.setDefaultLang('en');
     this.translate.use('en');
-    
+
+    firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).on('value', (snapshot) => {
+      HomeResultsPage._name=snapshot.child("FullName").val()
+      
+      console.log(HomeResultsPage._name)
+    });
   }
+ 
   switchLanguage() {
     
     this.translate.use(this.lang);
@@ -53,6 +63,7 @@ export class HomeResultsPage {
   };
   ionViewWillEnter() {
     this.menuCtrl.enable(true);
+    
   }
 
   settings() {

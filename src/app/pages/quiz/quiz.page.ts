@@ -270,8 +270,10 @@ export class QuizPage implements OnInit {
   }
 
   async showd1() {
-    var d="";
-    var dp="";
+    var d="<b>When in contact with a healthcare professional, you can recall this declared information:</b><br><br>";
+    var dp="                                      Details of my self-assessment  \r\r"+
+     "When in contact with a healthcare professional, you can recall this declared \r information: \r \r";
+
     this.detaill=[];
     
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).child('Detail').once('value', async (snapshot) => {
@@ -293,11 +295,11 @@ export class QuizPage implements OnInit {
       }
       console.log(d)
       const alert = await this.alertController.create({
-        header: 'Detail ',
+        header: 'Details of my self-assessment ',
         message: d,
         buttons: ['OK',
           {
-            text: 'Enregistrer',
+            text: 'Save',
             handler: () => {
               var doc = new jsPDF()
 

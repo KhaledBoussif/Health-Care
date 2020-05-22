@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'pharmaciespage', loadChildren: './pages/pharmaciespage/pharmaciespage.module#PharmaciespagePageModule' },
   { path: 'doctors', loadChildren: './pages/doctors/doctors.module#DoctorsPageModule' },
   { path: 'pharmacies', loadChildren: './pages/pharmacies/pharmacies.module#PharmaciesPageModule' },
+  
 ];
 
 @NgModule({
