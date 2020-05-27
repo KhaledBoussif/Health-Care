@@ -1,0 +1,509 @@
+﻿{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": null,
+      "properties": {
+        "FID": 1,
+        "gouvernora": "Ariana - أريانة",
+        "CODE_GOUV": 44,
+        "Shape__Area": 655217916.253906,
+        "Shape__Length": 206029.955864208,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 99,
+        "Nb_importes": 10,
+        "Nb_locaux": 6,
+        "Nb_deces": 5,
+        "Nb_retablis": 92,
+        "Cluster": null,
+        "Pop_19": 649683,
+        "cas_actifs": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": null,
+      "properties": {
+        "FID": 2,
+        "gouvernora": "Béja - باجة",
+        "CODE_GOUV": 21,
+        "Shape__Area": 5689735685.04736,
+        "Shape__Length": 540001.047411375,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 4,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 3,
+        "Cluster": null,
+        "Pop_19": 307099,
+        "cas_actifs": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": null,
+      "properties": {
+        "FID": 3,
+        "gouvernora": "Ben Arous - بن عروس",
+        "CODE_GOUV": 13,
+        "Shape__Area": 1029555324.00928,
+        "Shape__Length": 225960.469125139,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 98,
+        "Nb_importes": 3,
+        "Nb_locaux": 5,
+        "Nb_deces": 4,
+        "Nb_retablis": 92,
+        "Cluster": null,
+        "Pop_19": 697723,
+        "cas_actifs": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": null,
+      "properties": {
+        "FID": 4,
+        "gouvernora": "Bizerte - بنزرت",
+        "CODE_GOUV": 17,
+        "Shape__Area": 5562263446.36963,
+        "Shape__Length": 712538.794419115,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 26,
+        "Nb_importes": 1,
+        "Nb_locaux": 1,
+        "Nb_deces": 1,
+        "Nb_retablis": 24,
+        "Cluster": null,
+        "Pop_19": 591219,
+        "cas_actifs": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": null,
+      "properties": {
+        "FID": 5,
+        "gouvernora": "Gabès - قابس",
+        "CODE_GOUV": 51,
+        "Shape__Area": 10870180511.0427,
+        "Shape__Length": 544037.495591785,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 23,
+        "Nb_importes": 1,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 23,
+        "Cluster": null,
+        "Pop_19": 398024,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": null,
+      "properties": {
+        "FID": 6,
+        "gouvernora": "Gafsa - قفصة",
+        "CODE_GOUV": 61,
+        "Shape__Area": 11120103376.6577,
+        "Shape__Length": 549906.326931671,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 47,
+        "Nb_importes": 1,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 39,
+        "Cluster": null,
+        "Pop_19": 350394,
+        "cas_actifs": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": null,
+      "properties": {
+        "FID": 7,
+        "gouvernora": "Jendouba - جندوبة",
+        "CODE_GOUV": 22,
+        "Shape__Area": 4838504589.83716,
+        "Shape__Length": 442296.047382444,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 1,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 1,
+        "Cluster": null,
+        "Pop_19": 403830,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": null,
+      "properties": {
+        "FID": 8,
+        "gouvernora": "Kairouan - القيروان",
+        "CODE_GOUV": 41,
+        "Shape__Area": 9888022004.39355,
+        "Shape__Length": 612508.472384146,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 8,
+        "Nb_importes": 1,
+        "Nb_locaux": 1,
+        "Nb_deces": 0,
+        "Nb_retablis": 8,
+        "Cluster": null,
+        "Pop_19": 591187,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": null,
+      "properties": {
+        "FID": 9,
+        "gouvernora": "Kasserine - القصرين",
+        "CODE_GOUV": 42,
+        "Shape__Area": 12322619332.3696,
+        "Shape__Length": 607583.320736407,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 9,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 8,
+        "Cluster": null,
+        "Pop_19": 456748,
+        "cas_actifs": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": null,
+      "properties": {
+        "FID": 10,
+        "gouvernora": "Kébili - قبلي",
+        "CODE_GOUV": 63,
+        "Shape__Area": 32227706901.4668,
+        "Shape__Length": 898218.425292931,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 108,
+        "Nb_importes": 1,
+        "Nb_locaux": null,
+        "Nb_deces": 1,
+        "Nb_retablis": 85,
+        "Cluster": null,
+        "Pop_19": 167218,
+        "cas_actifs": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": null,
+      "properties": {
+        "FID": 11,
+        "gouvernora": "Le Kef - الكاف",
+        "CODE_GOUV": 23,
+        "Shape__Area": 7824059735.77441,
+        "Shape__Length": 514610.96658226,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 8,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 1,
+        "Nb_retablis": 7,
+        "Cluster": null,
+        "Pop_19": 246621,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": null,
+      "properties": {
+        "FID": 12,
+        "gouvernora": "Mahdia - المهدية",
+        "CODE_GOUV": 33,
+        "Shape__Area": 4367581227.12793,
+        "Shape__Length": 500207.691329053,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 19,
+        "Nb_importes": 1,
+        "Nb_locaux": 2,
+        "Nb_deces": 2,
+        "Nb_retablis": 16,
+        "Cluster": null,
+        "Pop_19": 437661,
+        "cas_actifs": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": null,
+      "properties": {
+        "FID": 13,
+        "gouvernora": "Manouba - منوبة",
+        "CODE_GOUV": 14,
+        "Shape__Area": 1749105369.16943,
+        "Shape__Length": 281415.92635701,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 40,
+        "Nb_importes": 1,
+        "Nb_locaux": null,
+        "Nb_deces": 5,
+        "Nb_retablis": 32,
+        "Cluster": null,
+        "Pop_19": 413744,
+        "cas_actifs": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": null,
+      "properties": {
+        "FID": 14,
+        "gouvernora": "Médenine - مدنين",
+        "CODE_GOUV": 52,
+        "Shape__Area": 13270857943.0317,
+        "Shape__Length": 1174629.08811116,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 90,
+        "Nb_importes": 3,
+        "Nb_locaux": 2,
+        "Nb_deces": 5,
+        "Nb_retablis": 77,
+        "Cluster": null,
+        "Pop_19": 510547,
+        "cas_actifs": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "geometry": null,
+      "properties": {
+        "FID": 15,
+        "gouvernora": "Monastir - المنستير",
+        "CODE_GOUV": 32,
+        "Shape__Area": 1550319317.78809,
+        "Shape__Length": 277771.778811569,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 41,
+        "Nb_importes": 4,
+        "Nb_locaux": 1,
+        "Nb_deces": 0,
+        "Nb_retablis": 40,
+        "Cluster": null,
+        "Pop_19": 594083,
+        "cas_actifs": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": null,
+      "properties": {
+        "FID": 16,
+        "gouvernora": "Nabeul - نابل",
+        "CODE_GOUV": 15,
+        "Shape__Area": 4385528740.98535,
+        "Shape__Length": 407461.060521471,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 15,
+        "Nb_importes": 1,
+        "Nb_locaux": null,
+        "Nb_deces": 1,
+        "Nb_retablis": 14,
+        "Cluster": null,
+        "Pop_19": 849184,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": null,
+      "properties": {
+        "FID": 17,
+        "gouvernora": "Sfax - صفاقس",
+        "CODE_GOUV": 34,
+        "Shape__Area": 10408889200.5247,
+        "Shape__Length": 917430.929052918,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 38,
+        "Nb_importes": 4,
+        "Nb_locaux": null,
+        "Nb_deces": 5,
+        "Nb_retablis": 29,
+        "Cluster": null,
+        "Pop_19": 1008808,
+        "cas_actifs": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": null,
+      "properties": {
+        "FID": 18,
+        "gouvernora": "Sidi Bouzid - سيدي بوزيد",
+        "CODE_GOUV": 43,
+        "Shape__Area": 11066589382.7439,
+        "Shape__Length": 670746.553807847,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 8,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 1,
+        "Nb_retablis": 5,
+        "Cluster": null,
+        "Pop_19": 450744,
+        "cas_actifs": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "geometry": null,
+      "properties": {
+        "FID": 19,
+        "gouvernora": "Siliana - سليانة",
+        "CODE_GOUV": 24,
+        "Shape__Area": 7181523899.57593,
+        "Shape__Length": 684527.428670737,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 4,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 4,
+        "Cluster": null,
+        "Pop_19": 227357,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "geometry": null,
+      "properties": {
+        "FID": 20,
+        "gouvernora": "Sousse - سوسة",
+        "CODE_GOUV": 31,
+        "Shape__Area": 3347173878.63281,
+        "Shape__Length": 452158.97055757,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 87,
+        "Nb_importes": 5,
+        "Nb_locaux": null,
+        "Nb_deces": 7,
+        "Nb_retablis": 76,
+        "Cluster": null,
+        "Pop_19": 732357,
+        "cas_actifs": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "geometry": null,
+      "properties": {
+        "FID": 21,
+        "gouvernora": "Tataouine - تطاوين",
+        "CODE_GOUV": 53,
+        "Shape__Area": 52898611454.0457,
+        "Shape__Length": 1337209.71217543,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 36,
+        "Nb_importes": 3,
+        "Nb_locaux": 2,
+        "Nb_deces": 1,
+        "Nb_retablis": 33,
+        "Cluster": null,
+        "Pop_19": 150830,
+        "cas_actifs": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "geometry": null,
+      "properties": {
+        "FID": 22,
+        "gouvernora": "Tozeur - توزر",
+        "CODE_GOUV": 62,
+        "Shape__Area": 8823649321.52905,
+        "Shape__Length": 463414.086960628,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 5,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 5,
+        "Cluster": null,
+        "Pop_19": 113985,
+        "cas_actifs": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "geometry": null,
+      "properties": {
+        "FID": 23,
+        "gouvernora": "Tunis - تونس",
+        "CODE_GOUV": 79,
+        "Shape__Area": 410177995.488281,
+        "Shape__Length": 196823.378129052,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 235,
+        "Nb_importes": 19,
+        "Nb_locaux": 10,
+        "Nb_deces": 9,
+        "Nb_retablis": 212,
+        "Cluster": null,
+        "Pop_19": 1072095,
+        "cas_actifs": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "geometry": null,
+      "properties": {
+        "FID": 24,
+        "gouvernora": "Zaghouan - زغوان",
+        "CODE_GOUV": 16,
+        "Shape__Area": 4413285277.16309,
+        "Shape__Length": 414962.4272241,
+        "Nb_quarantaine": 0,
+        "Nb_cas": 3,
+        "Nb_importes": null,
+        "Nb_locaux": null,
+        "Nb_deces": 0,
+        "Nb_retablis": 3,
+        "Cluster": null,
+        "Pop_19": 187171,
+        "cas_actifs": 0
+      }
+    }
+  ]
+}
