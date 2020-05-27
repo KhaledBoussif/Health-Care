@@ -101,9 +101,7 @@ export class AppComponent implements OnInit  {
     
   }
     
-  ionViewDidLoad() { 
-    
-  }
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

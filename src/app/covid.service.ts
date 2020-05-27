@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CovidService {
 
-  apiUrl = 'https://services6.arcgis.com/BiTAc9ApDDtL9okN/ArcGIS/rest/services/COVID19_Table_DATESetTOTAL/FeatureServer/info/itemInfo?f=pjson';
+  apiUrl = 'https://coronavirus-19-api.herokuapp.com/';
 
   constructor(private http: HttpClient) {
     
     
+
    }
 
   getAll() {
