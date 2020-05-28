@@ -349,7 +349,9 @@ nextSlide(i:number,YO:String,sendrep:string){
         firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).child('Detail').child(i.toString()).set(sendrep);
     }
 
+
   if(i == 6 && YO == "yes" && i > -1){
+
     console.log(i+1);
      this.Quiz.splice(i+1, 1);
     
