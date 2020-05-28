@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomeResultsPage } from '../home-results/home-results.page';
 import * as firebase from 'firebase';
 import * as jsPDF from 'jspdf'
-
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
@@ -26,9 +26,10 @@ export class QuizPage implements OnInit {
   validinput= false
   Bien1:boolean;
   Bien2: boolean;
+  latitude: any;
+  longitude: any;
   
-  
-  constructor(private formBuilder: FormBuilder,public alertController: AlertController,public modalController: ModalController,public translate: TranslateService) {
+  constructor(private formBuilder: FormBuilder,private geolocation: Geolocation,public alertController: AlertController,public modalController: ModalController,public translate: TranslateService) {
     
     
     this.translate.use('en');
@@ -370,6 +371,20 @@ nextSlide(i:number,YO:String,sendrep:string){
   }else
   if(i == this.Quiz.length && this.bien < 8)
   {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.latitude = resp.coords.latitude;
+      this.longitude = resp.coords.longitude;
+      
+      const pos = {
+        lat: this.latitude,
+        lng: this.longitude
+      };
+      firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
+        Position:pos
+      })
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
     
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
       infected:true

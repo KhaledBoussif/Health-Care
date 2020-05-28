@@ -17,6 +17,7 @@ import { from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { QuizPage } from '../quiz/quiz.page';
 import * as firebase from 'firebase';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 @Component({
   selector: 'app-home-results',
   templateUrl: './home-results.page.html',
@@ -29,7 +30,8 @@ export class HomeResultsPage  {
   
   public lang:any;
   public static _name: string;
-  
+  latitude: any;
+  longitude: any;
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
@@ -37,7 +39,8 @@ export class HomeResultsPage  {
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private geolocation: Geolocation
   ) {
 
     this.lang = 'en';
@@ -46,7 +49,22 @@ export class HomeResultsPage  {
 
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).on('value', (snapshot) => {
       HomeResultsPage._name=snapshot.child("FullName").val()
-      
+      if(snapshot.child("infected").val() == true){
+        this.geolocation.getCurrentPosition().then((resp) => {
+          this.latitude = resp.coords.latitude;
+          this.longitude = resp.coords.longitude;
+          
+          const pos = {
+            lat: this.latitude,
+            lng: this.longitude
+          };
+          firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
+            Position:pos
+          })
+        }).catch((error) => {
+          console.log('Error getting location', error);
+        });
+      }
       console.log(HomeResultsPage._name)
     });
   }
