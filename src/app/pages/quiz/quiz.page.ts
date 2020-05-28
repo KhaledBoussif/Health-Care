@@ -331,7 +331,7 @@ nextSlide(i:number,YO:String,sendrep:string){
     var rep=+(<HTMLInputElement>document.getElementById("Degree")).value;
    //console.log(rep)
    
-    if(i <= 9 && (YO == "no" || (rep < 38 && rep >= 37)) ){
+    if(i <= 8 && (YO == "no" || (rep < 38 && rep >= 37)) ){
       this.bien=this.bien+1;
       console.log("no "+this.bien);
     }else{
@@ -349,16 +349,16 @@ nextSlide(i:number,YO:String,sendrep:string){
         firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).child('Detail').child(i.toString()).set(sendrep);
     }
 
-  if(i == 7 && YO == "yes" && i > -1){
+  if(i == 6 && YO == "yes" && i > -1){
     console.log(i+1);
      this.Quiz.splice(i+1, 1);
     
   }else
-  if(i == 7 && YO == "no" && i > -1){
+  if(i == 6 && YO == "no" && i > -1){
     console.log(i);
    this.Quiz.splice(i, 1);
   }else 
-  if(i == this.Quiz.length && this.bien == 9){
+  if(i == this.Quiz.length && this.bien == 8){
     this.message=true;
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
       infected:false
@@ -366,7 +366,7 @@ nextSlide(i:number,YO:String,sendrep:string){
     console.log("BIEN")
 
   }else
-  if(i == this.Quiz.length && this.bien < 9)
+  if(i == this.Quiz.length && this.bien < 8)
   {
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
       infected:true
