@@ -370,6 +370,7 @@ nextSlide(i:number,YO:String,sendrep:string){
   }else
   if(i == this.Quiz.length && this.bien < 8)
   {
+    
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
       infected:true
     })

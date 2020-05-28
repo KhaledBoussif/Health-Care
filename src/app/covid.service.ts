@@ -19,6 +19,6 @@ export class CovidService {
   }
 
   getCountries() {
-    return this.http.get(`${this.apiUrl}countries`);
+    return this.http.get(`${this.apiUrl}countries/Tunisia`);
   }
 }

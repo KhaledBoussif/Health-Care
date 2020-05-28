@@ -18,7 +18,7 @@ export class StatisticalPage implements OnInit {
   constructor(private covidService: CovidService) { 
     this.countries=[];
     this.covidService.getCountries().subscribe((data)=>{
-      this.countries.push(data[108]) ;
+      this.countries.push(data) ;
       console.log(this.countries);
     });
     
