@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, Injectable } from '@angular/core';
 import {
   NavController,
   AlertController,
@@ -13,25 +13,33 @@ import{ GeolocationPage }from'../../pages/geolocation/geolocation.page';
 import { ImagePage } from './../modal/image/image.page';
 // Call notifications test by Popover and Custom Component.
 import { NotificationsComponent } from './../../components/notifications/notifications.component';
-import { from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { QuizPage } from '../quiz/quiz.page';
 import * as firebase from 'firebase';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Geolocation  } from '@ionic-native/geolocation/ngx';
+import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation/ngx';
+import { interval, Subscription } from 'rxjs';
+
+
 @Component({
   selector: 'app-home-results',
   templateUrl: './home-results.page.html',
   styleUrls: ['./home-results.page.scss']
 })
+
+@Injectable()
 export class HomeResultsPage  {
   searchKey = '';
   yourLocation = '123 Test Street';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
+  subscription: Subscription;
   
   public lang:any;
   public static _name: string;
   latitude: any;
   longitude: any;
+  public watch: any;    
+  public lat: number = 0;
+  public lng: number = 0;
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
@@ -40,7 +48,9 @@ export class HomeResultsPage  {
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public translate: TranslateService,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private backgroundGeolocation: BackgroundGeolocation,
+    public zone: NgZone
   ) {
 
     this.lang = 'en';
@@ -50,20 +60,32 @@ export class HomeResultsPage  {
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).on('value', (snapshot) => {
       HomeResultsPage._name=snapshot.child("FullName").val()
       if(snapshot.child("infected").val() == true){
-        this.geolocation.getCurrentPosition().then((resp) => {
-          this.latitude = resp.coords.latitude;
-          this.longitude = resp.coords.longitude;
-          
-          const pos = {
-            lat: this.latitude,
-            lng: this.longitude
-          };
-          firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
-            Position:pos
-          })
-        }).catch((error) => {
-          console.log('Error getting location', error);
-        });
+       
+        const source = interval(5000);
+   
+    this.subscription = source.subscribe(val => {
+
+      this.geolocation.getCurrentPosition().then((resp) => {
+        this.latitude = resp.coords.latitude;
+        this.longitude = resp.coords.longitude;
+        
+        const pos = {
+          lat: this.latitude,
+          lng: this.longitude
+        };
+        if(snapshot.child("Position/lat").val() != this.latitude && snapshot.child("Position/lng").val() != this.longitude ){
+        firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
+          Position:pos
+        })
+        console.log("add position");
+      }
+      }).catch((error) => {
+        console.log('Error getting location', error);
+      });
+
+    });
+    
+        
       }
       console.log(HomeResultsPage._name)
     });
@@ -88,67 +110,12 @@ export class HomeResultsPage  {
     this.navCtrl.navigateForward('settings');
   }
 
-  async alertLocation() {
-    const changeLocation = await this.alertCtrl.create({
-      header: 'Change Location',
-      message: 'Type your Address.',
-      inputs: [
-        {
-          name: 'location',
-          placeholder: 'Enter your new Location',
-          type: 'text'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Change',
-          handler: async (data) => {
-            console.log('Change clicked', data);
-            this.yourLocation = data.location;
-            const toast = await this.toastCtrl.create({
-              message: 'Location was change successfully',
-              duration: 3000,
-              position: 'top',
-              closeButtonText: 'OK',
-              showCloseButton: true
-            });
+  
 
-            toast.present();
-          }
-        }
-      ]
-    });
-    changeLocation.present();
-  }
 
-  async searchFilter () {
-    const modal = await this.modalCtrl.create({
-      component: SearchFilterPage
-    });
-    return await modal.present();
-  }
-  async Location () {
-    const modal = await this.modalCtrl.create({
-      component: GeolocationPage
-    });
-    return await modal.present();
+  
 
-    
-  }
 
-  async presentImage(image: any) {
-    const modal = await this.modalCtrl.create({
-      component: ImagePage,
-      componentProps: { value: image }
-    });
-    return await modal.present();
-  }
 
   async notifications(ev: any) {
     const popover = await this.popoverCtrl.create({

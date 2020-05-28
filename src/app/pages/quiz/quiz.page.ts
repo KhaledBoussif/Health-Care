@@ -8,6 +8,7 @@ import { HomeResultsPage } from '../home-results/home-results.page';
 import * as firebase from 'firebase';
 import * as jsPDF from 'jspdf'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
@@ -29,7 +30,13 @@ export class QuizPage implements OnInit {
   latitude: any;
   longitude: any;
   
-  constructor(private formBuilder: FormBuilder,private geolocation: Geolocation,public alertController: AlertController,public modalController: ModalController,public translate: TranslateService) {
+  constructor(private formBuilder: FormBuilder,private geolocation: Geolocation,
+    public alertController: AlertController,
+    public modalController: ModalController,
+    public translate: TranslateService,
+    
+    ) 
+    {
     
     
     this.translate.use('en');
@@ -391,6 +398,7 @@ nextSlide(i:number,YO:String,sendrep:string){
       infected:true
     })
     this.message=false;
+    
   }
   
   this.slides.lockSwipes(false);
