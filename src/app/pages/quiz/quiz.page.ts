@@ -386,6 +386,7 @@ nextSlide(i:number,YO:String,sendrep:string){
       console.log('Error getting location', error);
     });
     
+    
     firebase.database().ref('/Personne').child(firebase.auth().currentUser.uid).update({
       infected:true
     })

@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, AlertController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { async } from 'rxjs/internal/scheduler/async';
 declare var google;
 @Component({
   selector: 'popmenu',
@@ -12,15 +13,22 @@ export class PopmenuComponent implements OnInit, AfterViewInit {
   latitude: any;
   longitude: any;
   @ViewChild('mapElement') mapNativeElement: ElementRef;
-  constructor(public navCtrl: NavController,private geolocation: Geolocation,private modalCtrl: ModalController) { }
+  constructor(public navCtrl: NavController,private geolocation: Geolocation,private modalCtrl: ModalController,public alertCtrl: AlertController,) {
+    
+  }
 
   ngOnInit() {
+    
   }
+
+  
 
   togglePopupMenu() {
     return this.openMenu = !this.openMenu;
   }
   ngAfterViewInit(): void {
+    
+
     this.geolocation.getCurrentPosition().then((resp) => {
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
