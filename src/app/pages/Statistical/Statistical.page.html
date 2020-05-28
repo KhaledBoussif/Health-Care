@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons class="colrose" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="colrose">
+      Coronavirus by Country
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchCountry" autocomplete="off"></ion-searchbar>
+  </ion-toolbar>
+
+  <ion-list *ngFor="let country of countries | filter:searchCountry">
+    <ion-item >
+      <ion-label>
+
+        <h1 class="colrose">{{country.country}}</h1>
+        <p>
+          Cases: {{country.cases | number}} | Today: {{country.todayCases | number}} | Active: {{country.active | number}}<br>
+          Deaths: {{country.deaths | number}} | Today: {{country.todayDeaths | number}} <br>
+          Recovered: {{country.recovered | number}} | Critical: {{country.critical | number}}<br>
+          TotalTests: {{country.totalTests | number}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+<ion-list  *ngFor="let Data of Datalist | filter:searchCountry" >
+  <ion-item>
+    <ion-label>
+      <h1 class="colrose">{{Data.gouvernora}}</h1>
+        <p>
+          Nb Cases: {{Data?.Nb_cas || 0  | number}} | Nb restored: {{Data?.Nb_retablis || 0  | number}}  <br>
+          Nb Deaths: {{Data?.Nb_deces || 0  | number}} | Nb quarantine: {{ Data?.Nb_quarantaine || 0  | number}}<br>
+          Nb imported: {{Data?.Nb_importes || 0  | number}} | Nb local: {{ Data?.Nb_locaux || 0  | number}}
+        </p>
+    
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

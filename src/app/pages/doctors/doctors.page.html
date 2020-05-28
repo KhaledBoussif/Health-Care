@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <button  float-right  ion-button  class="colrose closeB" (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <ion-title class="colrose">Doctors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="backgro" *ngFor="let doc of Listdoc" >
+    <ion-card-header>
+      <ion-card-subtitle>Generalist</ion-card-subtitle>
+      <ion-card-title> <ion-icon name="person"></ion-icon> {{ doc.Nom }} {{ doc.Prenom }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-icon name="pin"></ion-icon> <b>Address:</b> <br> {{ doc.Adresse }} <br>
+      <ion-icon name="stopwatch"></ion-icon> <b>Hours:</b><br> {{ doc.Horaires }} <br>
+      <ion-icon name="call"></ion-icon> <b>Phone:</b> <br>{{ doc.numtel }}
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

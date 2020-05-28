@@ -1,0 +1,48 @@
+:host {
+    
+    ion-content {
+        --background: #ffffff;
+    }
+
+    ion-item {
+        border-radius: 0;
+        border-bottom: 1px dotted var(--ion-color-medium);
+    }
+
+    ion-card {
+        &.no-radius {
+            border-radius: 0;
+        }
+    }
+}
+.colrose{
+    color:#ff0047;
+}
+.colgris{
+    color:#4f6b71;
+}
+.backrose{
+    --background:#ff0047;
+}
+.backgris{
+    --background:#4f6b71;
+}
+.sechhan{
+    width: 260px;
+}
+.listchan{
+    width: 45px;
+    background-color: transparent;
+    display: flex;
+}
+.iconeglob{
+    color: white;
+}
+
+.imagestyl{
+    border-style: solid;
+    border-color: burlywood;
+    border-width: thick;
+    height: 100%;
+    width: 100%;
+}

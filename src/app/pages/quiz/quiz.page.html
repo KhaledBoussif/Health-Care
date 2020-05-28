@@ -1,0 +1,166 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="colrose" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="colrose">Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-slides   #slides>
+    
+    <ion-slide  *ngFor="let Q of Quiz ; let i = index"  >
+      <ion-label class="Quest" floating style="text-align: center;" >
+        <h1><b>Question {{i+1}}</b></h1><br>
+        {{Q.Qest}}
+      </ion-label>
+      <form *ngIf="Q.Ask != '' "  [formGroup]="inputrep" class="list-form">
+      <ion-item   class=" radiob animated ans fadeInUp"> 
+        
+        <ion-item>
+            <ion-label no-padding  position="floating">
+              {{Q.Ask}}
+            </ion-label>
+            <ion-input *ngIf="Q.Ask == 'Degrees:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Degree" ></ion-input>
+            <ion-input *ngIf="Q.Ask == 'Age:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Age" ></ion-input>
+            <ion-input *ngIf="Q.Ask == 'Size:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Size" ></ion-input>
+            <ion-input *ngIf="Q.Ask == 'Weight:'" (ionInput)="testinp(Q.max,Q.min)" maxlength="3"    formControlName="reponse"  type="text" id="Weight" ></ion-input>
+        </ion-item>
+        <ion-button  class="but" item-end  (click)="nextSlide(i+1,null,Q.rep)"  [disabled]="!validinput"><ion-icon    ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></ion-button>
+        
+        
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="!validinput">
+        <ion-text style="color:#4f6b71;font-size: 12px;">
+          This value must be greater than {{Q.min}} and less than {{Q.max}}
+        </ion-text>
+      </p>
+    </form>
+    
+      <ion-list *ngIf="Q.Ask == '' " class="radiob"  radio-group>
+        <ion-item>
+          <ion-label>YES</ion-label>
+          <ion-radio (click)="nextSlide(i+1,'yes',Q.rep)"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>NO</ion-label>
+          <ion-radio (click)="nextSlide(i+1,'no',null)"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  
+
+    <ion-slide *ngIf="message" >
+      <ion-label  class="Quest" floating style="text-align: center;" >
+        Your condition does not appear to be cause for concern or is probably not part of COVID 19. 
+      </ion-label>
+
+      <ion-button class="bshowgood" (click)="showb1()"><ion-label>What to do with my self-assessment?</ion-label></ion-button>
+      <ion-button class="bshowgood" (click)="showd1()" >Details of my self-assessment</ion-button>
+      <ion-button class="bshowgood" (click)="presentModal()" >Food during COVID-19</ion-button>
+
+      <ion-label class="imageshtext"  floating style="text-align: center;" >
+        <b>To avoid spreading the virus, adopt barrier gestures:</b>
+      </ion-label>
+
+      <ion-row>
+        
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/hand.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Wash your hands very regularly
+            
+          </ion-label>
+          
+        </ion-col>
+
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/ya3ts.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Cough or sneeze into your elbow or into a tissue
+          </ion-label>
+        </ion-col>
+
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/mouchwar.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Wear a disposable mask when you are sick
+          </ion-label>
+        </ion-col>
+        
+       
+      </ion-row>
+    </ion-slide>
+
+    
+
+    
+    
+
+    <ion-slide *ngIf="!message" >
+      
+      
+      <ion-label class="Quest" floating style="text-align: center;" >
+        You may have COVID 19. Your symptoms indicate that medical advice is needed.  
+      </ion-label>
+      <ion-button class="bshowgood" (click)="showM1()"><ion-label>What to do with my self-assessment?</ion-label></ion-button>
+      <ion-button class="bshowgood" (click)="showd1()" >Details of my self-assessment</ion-button>
+      <ion-button class="bshowgood" (click)="presentModal()">Food during COVID-19</ion-button>
+   
+
+      <ion-label class="imageshtext"  floating style="text-align: center;" >
+        <b>To avoid spreading the virus, adopt barrier gestures:</b>
+      </ion-label>
+
+      <ion-row>
+        
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/hand.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Wash your hands very regularly
+            
+          </ion-label>
+          
+        </ion-col>
+
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/ya3ts.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Cough or sneeze into your elbow or into a tissue
+          </ion-label>
+        </ion-col>
+
+        <ion-col  size-md>
+          
+          <ion-img class="imagesh"  src="assets/img/mouchwar.png"></ion-img>
+        
+          <ion-label  class="imageshtext" floating  >
+            Wear a disposable mask when you are sick
+          </ion-label>
+        </ion-col>
+        
+       
+      </ion-row>
+    </ion-slide>
+
+
+
+     
+
+
+  </ion-slides>
+  
+
+</ion-content>

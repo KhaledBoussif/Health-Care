@@ -1,0 +1,23 @@
+:host {
+    ion-content {
+        --background: #ffffff;
+    }
+
+    ion-list {
+        &.list-md {
+            padding: 0;
+        }
+    }
+}
+.colrose{
+    color:#ff0047;
+}
+.colgris{
+    color:#4f6b71;
+}
+.backrose{
+    --background:#ff0047;
+}
+.backgris{
+    --background:#4f6b71;
+}
