@@ -1,15 +1,13 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-        <ion-button color="primary" (click)="closeModal()">
-            <ion-icon name="close" color="light"></ion-icon>
-        </ion-button>
+  <ion-toolbar >
+    <ion-buttons class="colrose"  slot="start">
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    
+    <ion-title class="colrose">User location</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div #mapElement class="map"></div>
+  <div #mapElement id="map" class="map"></div>
 </ion-content>

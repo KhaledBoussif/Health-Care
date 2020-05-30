@@ -33,13 +33,14 @@ export class HomeResultsPage  {
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
   subscription: Subscription;
   
-  public lang:any;
+  public static lang:any;
   public static _name: string;
   latitude: any;
   longitude: any;
   public watch: any;    
   public lat: number = 0;
   public lng: number = 0;
+  public static showadmin: boolean;
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
@@ -47,13 +48,17 @@ export class HomeResultsPage  {
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
-    public translate: TranslateService,
+    public  translate: TranslateService,
     private geolocation: Geolocation,
     private backgroundGeolocation: BackgroundGeolocation,
     public zone: NgZone
   ) {
 
-    this.lang = 'en';
+    HomeResultsPage.showadmin=false
+    if(firebase.auth().currentUser.uid == "YP8bwDKzVbPwBTBUTCYCdormUkd2"){
+      HomeResultsPage.showadmin=true
+    }
+    HomeResultsPage.lang = 'en';
     this.translate.setDefaultLang('en');
     this.translate.use('en');
 
@@ -93,7 +98,8 @@ export class HomeResultsPage  {
  
   switchLanguage() {
     
-    this.translate.use(this.lang);
+    
+    this.translate.use(HomeResultsPage.lang);
     
   }
   slideOpt = {

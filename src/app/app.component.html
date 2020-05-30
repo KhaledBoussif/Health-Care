@@ -39,7 +39,7 @@
         </ion-toolbar>
       </ion-header>
 
-      <ion-content class=" bg-profile">
+      <ion-content *ngIf="!showadmin" class=" bg-profile">
         <ion-list>
           <ion-list-header class="backgris " >
             <ion-label style="color: white;">Menu</ion-label>
@@ -53,6 +53,25 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          
+        </ion-list>
+      </ion-content>
+
+      <ion-content *ngIf="showadmin" class=" bg-profile">
+        <ion-list>
+          <ion-list-header class="backgris " >
+            <ion-label style="color: white;">Menu</ion-label>
+          </ion-list-header>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of admin">
+            <ion-item [routerLink]="[p.url]" color="light">
+              <ion-icon slot="start" [name]="p.icon" class="colrose"></ion-icon>
+              <ion-label class="colrose">
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
         </ion-list>
       </ion-content>
     </ion-menu>

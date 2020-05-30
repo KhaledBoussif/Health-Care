@@ -17,13 +17,14 @@ ion-item {
     
   ion-content {
       --background: #ff0047 !important ;
+      
   }
-}
+  }
 
-// backgrounds //
-.bg-white {
+  // backgrounds //
+  .bg-white {
   background-color: #fff;
-}
+  }
   
   .bg-light {
     background-color: var(--ion-color-light);
@@ -97,7 +98,7 @@ ion-item {
 
   .text-secondary {
     color: var(--ion-color-secondary);
-}
+  }
   
   .text-dark {
     color: var(--ion-color-dark);
@@ -157,7 +158,7 @@ ion-item {
   
     .auth-content {
       margin: 0 5%;
-      
+     
       .logo {
         width: 200px;
         height: 70px;

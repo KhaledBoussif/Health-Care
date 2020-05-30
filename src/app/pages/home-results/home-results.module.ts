@@ -41,6 +41,6 @@ const routes: Routes = [
       }
     })
   ],
-  declarations: [HomeResultsPage, PopmenuComponent,GeolocationPage]
+  declarations: [HomeResultsPage, PopmenuComponent]
 })
 export class HomeResultsPageModule {}

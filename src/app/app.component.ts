@@ -17,8 +17,10 @@ import { Subscription, interval } from 'rxjs';
 export class AppComponent implements OnInit  {
   
   public appPages: Array<Pages>;
+  public admin: Array<Pages>;
   name:string
   subscription: Subscription;
+  showadmin:boolean = false;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -81,6 +83,46 @@ export class AppComponent implements OnInit  {
         icon: 'information-circle-outline'
       },
     ];
+
+    this.admin = [
+      {
+        title: 'Home',
+        url: '/home-results',
+        direct: 'root',
+        icon: 'home'
+      },
+      {
+        title: 'User',
+        url: '/Location',
+        direct: 'root',
+        icon: 'contacts'
+      },
+      {
+        title: 'Doctors',
+        url: '/doctorspage',
+        direct: 'forward',
+        icon: 'person'
+      },
+      {
+        title: 'Pharmacies',
+        url: '/pharmaciespage',
+        direct: 'forward',
+        icon: 'medkit'
+      },
+      {
+        title: 'Statistics',
+        url: '/Statistical',
+        direct: 'forward',
+        icon: 'stats'
+      },
+      {
+        title: 'About',
+        url: '/about',
+        direct: 'forward',
+        icon: 'information-circle-outline'
+      },
+  
+    ];
    
      
     
@@ -96,8 +138,16 @@ export class AppComponent implements OnInit  {
       if(HomeResultsPage._name != null)
         {
           this.name=HomeResultsPage._name
+        }
+        if(this.showadmin != HomeResultsPage.showadmin){
+          this.showadmin=HomeResultsPage.showadmin
+          console.log(this.showadmin);
         } 
     });
+    
+   
+      
+    
     
   }
     

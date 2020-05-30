@@ -15,9 +15,9 @@ export class PharmaciespagePage implements OnInit {
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-/**
+
     this.Listpays=[]
-    firebase.database().ref('/Doctor').once('value', (snapshot) => {
+    firebase.database().ref('/Pharmacies').once('value', (snapshot) => {
       snapshot.forEach((chillldddd) => {
         this.Listpays.push(
           chillldddd.key
@@ -25,10 +25,10 @@ export class PharmaciespagePage implements OnInit {
         console.log(this.Listpays)
       })
     });
- */
+ 
   }
   async presentModal(pay:any) {
-   // PharmaciespagePage.namepay=pay;
+    PharmaciespagePage.namepay=pay;
     const modal = await this.modalController.create({
       component: PharmaciesPage
     });

@@ -1,7 +1,9 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { ModalController } from '@ionic/angular';
+import * as firebase from 'firebase';
 declare var google;
+
 @Component({
   selector: 'app-geolocation',
   templateUrl: './geolocation.page.html',
@@ -16,67 +18,85 @@ export class GeolocationPage implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
+
   ngAfterViewInit(): void {
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.latitude = resp.coords.latitude;
-      this.longitude = resp.coords.longitude;
-      const map = new google.maps.Map(this.mapNativeElement.nativeElement, {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 16
-      });
-      /*location object*/
-      const pos = {
-        lat: this.latitude,
-        lng: this.longitude
-      };
-      map.setCenter(pos);
-      const icon = {
-        url: 'assets/icon/u.png', // image url
-        scaledSize: new google.maps.Size(50, 50), // scaled size
-      };
-      const marker = new google.maps.Marker({
-        position: pos,
+    const icon = {
+      url: 'assets/icon/u.png', // image url
+      scaledSize: new google.maps.Size(50, 50), // scaled size
+    };
+    var locations = []
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: -34.397,
+        lng: 150.644,
+      },
+      zoom: 8,
+    })
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 6,
+      center: new google.maps.LatLng(33.942178457716565,10.022474641985543),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+    
+    var infowindow = new google.maps.InfoWindow({ maxWidth: 320})
+   
+    var marker, i  ,infouser
+    firebase.database().ref('/Personne').once('value', (snapshot) => {
+      
+      snapshot.forEach((chillldddd) => {
+        
+        
+        locations.push({
+          info:chillldddd.child("Detail").val(),
+          lat:chillldddd.child("Position").child("lat").val(),
+          long:chillldddd.child("Position").child("lng").val(),
+          name:chillldddd.child("FullName").val()
+        })
+        
+        
+      })
+
+
+  
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i].lat, locations[i].long),
         map: map,
-        title: 'Hello World!',
         icon: icon
-      });
-      const contentString = '<div id="content">' +
-          '<div id="siteNotice">' +
-          '</div>' +
-          '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-          '<div id="bodyContent">' +
-          '<img src="assets/icon/user.png" width="200">' +
-          '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-          'sandstone rock formation in the southern part of the ' +
-          'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-          'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-          '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-          'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-          'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-          'Aboriginal people of the area. It has many springs, waterholes, ' +
-          'rock caves and ancient paintings. Uluru is listed as a World ' +
-          'Heritage Site.</p>' +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-          '(last visited June 22, 2009).</p>' +
-          '</div>' +
-          '</div>';
-      const infowindow = new google.maps.InfoWindow({
-        content: contentString,
-        maxWidth: 400
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-    }).catch((error) => {
-      console.log('Error getting location', error);
+      })
+      google.maps.event.addListener(
+        marker,
+        'click',
+        (function (marker, i) {
+          return function () {
+            infouser="<b>"+locations[i].name+":</b> <br>";
+
+              for (var j = 0; j < Object.values(locations[i].info).length; j++) {
+                infouser=infouser +"- "+ Object.values(locations[i].info)[j]+"<br>"
+              }
+            
+            infowindow.setContent(infouser)
+            infowindow.open(map, marker)
+          }
+        })(marker, i)
+      )
+     
+        
+        
+    }
+
+
     });
+    
+  
+    
+  
+  
+      
+    
   }
 
 
 
-  closeModal() {
-    this.modalCtrl.dismiss();
-  }
-
+ 
 }

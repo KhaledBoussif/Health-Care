@@ -14,12 +14,11 @@ export class PharmaciesPage implements OnInit {
 
   ngOnInit() {
     this.Listphar=[]
-    firebase.database().ref('/Doctor').child(PharmaciespagePage.namepay).once('value', (snapshot) => {
+    firebase.database().ref('/Pharmacies').child(PharmaciespagePage.namepay).once('value', (snapshot) => {
       snapshot.forEach((chillldddd) => {
         this.Listphar.push(
           chillldddd.val()
         );
-        
       })
     });
     console.log(this.Listphar)
