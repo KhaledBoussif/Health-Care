@@ -1,6 +1,7 @@
-Ionic 4 Start Theme (v1.0.0)
+Health-Care
 ==========
-**Ionic 4 start theme** experiencing the best of new features about this new and definitive release: Angular 7 + Ionic 4 final. 
+
+Health-Care experiencing the best of new features about this new and definitive release: Angular 7 + Ionic 4 final. 
 
 * Angular 7
 * @ionic/angular 4.0.0
@@ -55,5 +56,4 @@ ___
 <br>
 **Facebook Page:**
 [https://www.facebook.com/ionicthemecom](https://www.facebook.com/ionicthemecom)
-# Health-Care
-
+# 
