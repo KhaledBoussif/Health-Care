@@ -75,13 +75,13 @@ export class AppComponent implements OnInit  {
         url: '/settings',
         direct: 'forward',
         icon: 'cog'
-      },*/
+      },
       {
         title: 'About',
         url: '/about',
         direct: 'forward',
         icon: 'information-circle-outline'
-      },
+      },*/
     ];
 
     this.admin = [
@@ -114,13 +114,13 @@ export class AppComponent implements OnInit  {
         url: '/Statistical',
         direct: 'forward',
         icon: 'stats'
-      },
+      },/** 
       {
         title: 'About',
         url: '/about',
         direct: 'forward',
         icon: 'information-circle-outline'
-      },
+      },*/
   
     ];
    

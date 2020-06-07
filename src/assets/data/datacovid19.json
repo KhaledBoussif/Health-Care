@@ -12,14 +12,14 @@
         "Shape__Area": 655217916.253906,
         "Shape__Length": 206029.955864208,
         "Nb_quarantaine": 0,
-        "Nb_cas": 99,
+        "Nb_cas": 103,
         "Nb_importes": 10,
         "Nb_locaux": 6,
         "Nb_deces": 5,
         "Nb_retablis": 92,
         "Cluster": null,
         "Pop_19": 649683,
-        "cas_actifs": 2
+        "cas_actifs": 6
       }
     },
     {
@@ -33,11 +33,11 @@
         "Shape__Area": 5689735685.04736,
         "Shape__Length": 540001.047411375,
         "Nb_quarantaine": 0,
-        "Nb_cas": 4,
+        "Nb_cas": 5,
         "Nb_importes": null,
         "Nb_locaux": null,
         "Nb_deces": 0,
-        "Nb_retablis": 3,
+        "Nb_retablis": 4,
         "Cluster": null,
         "Pop_19": 307099,
         "cas_actifs": 1
@@ -54,14 +54,14 @@
         "Shape__Area": 1029555324.00928,
         "Shape__Length": 225960.469125139,
         "Nb_quarantaine": 0,
-        "Nb_cas": 98,
+        "Nb_cas": 99,
         "Nb_importes": 3,
         "Nb_locaux": 5,
         "Nb_deces": 4,
-        "Nb_retablis": 92,
+        "Nb_retablis": 94,
         "Cluster": null,
         "Pop_19": 697723,
-        "cas_actifs": 2
+        "cas_actifs": 1
       }
     },
     {
@@ -75,14 +75,14 @@
         "Shape__Area": 5562263446.36963,
         "Shape__Length": 712538.794419115,
         "Nb_quarantaine": 0,
-        "Nb_cas": 26,
+        "Nb_cas": 28,
         "Nb_importes": 1,
         "Nb_locaux": 1,
         "Nb_deces": 1,
-        "Nb_retablis": 24,
+        "Nb_retablis": 25,
         "Cluster": null,
         "Pop_19": 591219,
-        "cas_actifs": 1
+        "cas_actifs": 2
       }
     },
     {
@@ -96,14 +96,14 @@
         "Shape__Area": 10870180511.0427,
         "Shape__Length": 544037.495591785,
         "Nb_quarantaine": 0,
-        "Nb_cas": 23,
+        "Nb_cas": 28,
         "Nb_importes": 1,
         "Nb_locaux": null,
         "Nb_deces": 0,
         "Nb_retablis": 23,
         "Cluster": null,
         "Pop_19": 398024,
-        "cas_actifs": 0
+        "cas_actifs": 5
       }
     },
     {
@@ -117,14 +117,14 @@
         "Shape__Area": 11120103376.6577,
         "Shape__Length": 549906.326931671,
         "Nb_quarantaine": 0,
-        "Nb_cas": 47,
+        "Nb_cas": 49,
         "Nb_importes": 1,
         "Nb_locaux": null,
-        "Nb_deces": 0,
-        "Nb_retablis": 39,
+        "Nb_deces": 1,
+        "Nb_retablis": 45,
         "Cluster": null,
         "Pop_19": 350394,
-        "cas_actifs": 8
+        "cas_actifs": 3
       }
     },
     {
@@ -159,14 +159,14 @@
         "Shape__Area": 9888022004.39355,
         "Shape__Length": 612508.472384146,
         "Nb_quarantaine": 0,
-        "Nb_cas": 8,
+        "Nb_cas": 10,
         "Nb_importes": 1,
         "Nb_locaux": 1,
         "Nb_deces": 0,
         "Nb_retablis": 8,
         "Cluster": null,
         "Pop_19": 591187,
-        "cas_actifs": 0
+        "cas_actifs": 2
       }
     },
     {
@@ -184,10 +184,10 @@
         "Nb_importes": null,
         "Nb_locaux": null,
         "Nb_deces": 0,
-        "Nb_retablis": 8,
+        "Nb_retablis": 9,
         "Cluster": null,
         "Pop_19": 456748,
-        "cas_actifs": 1
+        "cas_actifs": 0
       }
     },
     {
@@ -205,10 +205,10 @@
         "Nb_importes": 1,
         "Nb_locaux": null,
         "Nb_deces": 1,
-        "Nb_retablis": 85,
+        "Nb_retablis": 97,
         "Cluster": null,
         "Pop_19": 167218,
-        "cas_actifs": 22
+        "cas_actifs": 10
       }
     },
     {
@@ -243,11 +243,11 @@
         "Shape__Area": 4367581227.12793,
         "Shape__Length": 500207.691329053,
         "Nb_quarantaine": 0,
-        "Nb_cas": 19,
+        "Nb_cas": 20,
         "Nb_importes": 1,
         "Nb_locaux": 2,
         "Nb_deces": 2,
-        "Nb_retablis": 16,
+        "Nb_retablis": 17,
         "Cluster": null,
         "Pop_19": 437661,
         "cas_actifs": 1
@@ -264,14 +264,14 @@
         "Shape__Area": 1749105369.16943,
         "Shape__Length": 281415.92635701,
         "Nb_quarantaine": 0,
-        "Nb_cas": 40,
+        "Nb_cas": 41,
         "Nb_importes": 1,
         "Nb_locaux": null,
         "Nb_deces": 5,
-        "Nb_retablis": 32,
+        "Nb_retablis": 35,
         "Cluster": null,
         "Pop_19": 413744,
-        "cas_actifs": 3
+        "cas_actifs": 1
       }
     },
     {
@@ -285,14 +285,14 @@
         "Shape__Area": 13270857943.0317,
         "Shape__Length": 1174629.08811116,
         "Nb_quarantaine": 0,
-        "Nb_cas": 90,
+        "Nb_cas": 92,
         "Nb_importes": 3,
         "Nb_locaux": 2,
         "Nb_deces": 5,
-        "Nb_retablis": 77,
+        "Nb_retablis": 85,
         "Cluster": null,
         "Pop_19": 510547,
-        "cas_actifs": 8
+        "cas_actifs": 2
       }
     },
     {
@@ -306,14 +306,14 @@
         "Shape__Area": 1550319317.78809,
         "Shape__Length": 277771.778811569,
         "Nb_quarantaine": 0,
-        "Nb_cas": 41,
+        "Nb_cas": 44,
         "Nb_importes": 4,
         "Nb_locaux": 1,
         "Nb_deces": 0,
-        "Nb_retablis": 40,
+        "Nb_retablis": 41,
         "Cluster": null,
         "Pop_19": 594083,
-        "cas_actifs": 1
+        "cas_actifs": 3
       }
     },
     {
@@ -327,14 +327,14 @@
         "Shape__Area": 4385528740.98535,
         "Shape__Length": 407461.060521471,
         "Nb_quarantaine": 0,
-        "Nb_cas": 15,
+        "Nb_cas": 18,
         "Nb_importes": 1,
         "Nb_locaux": null,
         "Nb_deces": 1,
         "Nb_retablis": 14,
         "Cluster": null,
         "Pop_19": 849184,
-        "cas_actifs": 0
+        "cas_actifs": 3
       }
     },
     {
@@ -352,10 +352,10 @@
         "Nb_importes": 4,
         "Nb_locaux": null,
         "Nb_deces": 5,
-        "Nb_retablis": 29,
+        "Nb_retablis": 33,
         "Cluster": null,
         "Pop_19": 1008808,
-        "cas_actifs": 4
+        "cas_actifs": 0
       }
     },
     {
@@ -369,11 +369,11 @@
         "Shape__Area": 11066589382.7439,
         "Shape__Length": 670746.553807847,
         "Nb_quarantaine": 0,
-        "Nb_cas": 8,
+        "Nb_cas": 10,
         "Nb_importes": null,
         "Nb_locaux": null,
         "Nb_deces": 1,
-        "Nb_retablis": 5,
+        "Nb_retablis": 7,
         "Cluster": null,
         "Pop_19": 450744,
         "cas_actifs": 2
@@ -411,14 +411,14 @@
         "Shape__Area": 3347173878.63281,
         "Shape__Length": 452158.97055757,
         "Nb_quarantaine": 0,
-        "Nb_cas": 87,
+        "Nb_cas": 90,
         "Nb_importes": 5,
         "Nb_locaux": null,
         "Nb_deces": 7,
-        "Nb_retablis": 76,
+        "Nb_retablis": 78,
         "Cluster": null,
         "Pop_19": 732357,
-        "cas_actifs": 4
+        "cas_actifs": 5
       }
     },
     {
@@ -432,11 +432,11 @@
         "Shape__Area": 52898611454.0457,
         "Shape__Length": 1337209.71217543,
         "Nb_quarantaine": 0,
-        "Nb_cas": 36,
+        "Nb_cas": 37,
         "Nb_importes": 3,
         "Nb_locaux": 2,
         "Nb_deces": 1,
-        "Nb_retablis": 33,
+        "Nb_retablis": 34,
         "Cluster": null,
         "Pop_19": 150830,
         "cas_actifs": 2
@@ -474,14 +474,14 @@
         "Shape__Area": 410177995.488281,
         "Shape__Length": 196823.378129052,
         "Nb_quarantaine": 0,
-        "Nb_cas": 235,
+        "Nb_cas": 237,
         "Nb_importes": 19,
         "Nb_locaux": 10,
         "Nb_deces": 9,
-        "Nb_retablis": 212,
+        "Nb_retablis": 221,
         "Cluster": null,
         "Pop_19": 1072095,
-        "cas_actifs": 14
+        "cas_actifs": 7
       }
     },
     {
